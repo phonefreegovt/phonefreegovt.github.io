@@ -213,37 +213,86 @@
       color: #92400e;
     }
 
-    .pf-expert-badge {
+    /* Eligibility calculator card */
+    .pf-eligibility-calculator {
+      background: #ffffff;
+    }
+
+    .pf-eligibility-calculator h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #0f172a;
+    }
+
+    .pf-eligibility-calculator .form-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--pf-muted);
+    }
+
+    .pf-eligibility-calculator small {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    .pf-eligibility-calculator-result {
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      min-height: 2.2rem;
+    }
+
+    .pf-result-high {
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    .pf-result-check {
+      color: #b45309;
+      font-weight: 600;
+    }
+
+    .pf-high-cta {
+      background-color: #10b981;
+      border-color: #059669;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .pf-high-cta:hover {
+      background-color: #059669;
+      border-color: #047857;
+      color: #ffffff;
+    }
+
+    .pf-calculator-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      font-size: 0.7rem;
-      padding: 0.15rem 0.6rem;
+      padding: 0.15rem 0.55rem;
       border-radius: 9999px;
-      background-color: rgba(16, 185, 129, 0.1);
-      color: #10b981;
-      font-weight: 600;
-      margin-left: 0.5rem;
-      border: 1px solid rgba(16, 185, 129, 0.45);
-    }
-
-    .pf-expert-badge i {
+      background-color: #eff6ff;
       font-size: 0.7rem;
+      color: #1d4ed8;
+      border: 1px solid rgba(59, 130, 246, 0.35);
     }
 
-    .pf-calc-label {
+    /* Verified expert badge */
+    .pf-verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #10b981;
+      border: 1px solid #10b981;
+      background-color: rgba(16, 185, 129, 0.06);
+    }
+
+    .pf-verified-badge i {
       font-size: 0.8rem;
-      font-weight: 600;
-      color: #374151;
-    }
-
-    .pf-calc-select {
-      font-size: 0.85rem;
-    }
-
-    .pf-calc-result {
-      font-size: 0.85rem;
-      font-weight: 600;
     }
 
     @media (max-width: 575.98px) {
@@ -328,7 +377,7 @@
             "ratingValue": "5",
             "bestRating": "5"
           },
-          "reviewBody": "The Lifeline Program Application Process, when followed with proper documentation and guidance, is an effective pathway for eligible households to secure essential connectivity support."
+          "reviewBody": "An evidence based, consumer friendly federal program that helps qualifying households stay connected through discounted phone and internet service."
         }
       }
     ]
@@ -402,7 +451,7 @@
               Free Government Phone Programs Guide for 2025
             </h1>
             <p class="mb-4 text-slate-100 text-sm md:text-base">
-              Many households in the United States rely on a phone to apply for jobs, reach doctors, stay in touch with family, or call for help. If your income is limited, the Lifeline program and related offers can lower your monthly phone bill or help you <a href="https://applyfreegovphone.com/"><strong>apply for your free government smartphone here</strong></a>. This guide explains how the programs work, who may qualify, how to apply safely, and what to watch out for.
+              Many households in the United States rely on a phone to apply for jobs, reach doctors, stay in touch with family, or call for help. If your income is limited, the Lifeline program and related offers can lower your monthly phone bill or help you <a href="https://applyfreegovphone.com/" rel="dofollow"><strong>apply for your free government smartphone here</strong></a>. This guide explains how the programs work, who may qualify, how to apply safely, and what to watch out for.
             </p>
             <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
               <a href="#how-to-apply" class="btn btn-light text-primary fw-semibold rounded-pill px-4 py-2">
@@ -426,7 +475,7 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="position-relative mb-4 mb-lg-3">
+            <div class="position-relative">
               <img src="https://raw.githubusercontent.com/phonefreegovt/phonefreegovt.github.io/refs/heads/main/free%20smart%20phones.webp" class="img-fluid pf-hero-image" alt="Illustration of free smartphones available through government assistance programs in the United States" />
               <div class="position-absolute bottom-3 start-3 bg-white/90 rounded-3 px-3 py-2 shadow-sm d-flex align-items-center gap-2">
                 <div class="pf-list-icon">
@@ -446,45 +495,61 @@
               </div>
             </div>
 
-            <div class="pf-card p-4 bg-white/95">
-              <p class="pf-small-label mb-2 text-slate-500">Eligibility Probability Calculator</p>
-              <h3 class="fw-semibold mb-3 text-slate-800" style="font-size:1.05rem;">
-                Quick check of eligibility clues
-              </h3>
-              <p class="text-xs text-slate-600 mb-3">
-                This simple tool does not replace official rules, but it helps you think about whether your household situation aligns with common eligibility patterns.
+            <!-- Eligibility Probability Calculator -->
+            <div class="pf-card pf-eligibility-calculator mt-4 p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h4 class="mb-0">
+                  <i class="fa-solid fa-calculator me-2 text-primary"></i>
+                  Eligibility Probability Calculator
+                </h4>
+                <span class="pf-calculator-badge">
+                  <i class="fa-solid fa-bolt me-1"></i>
+                  Quick estimate only
+                </span>
+              </div>
+              <p class="mb-3 text-muted" style="font-size:0.8rem;">
+                Answer these two questions to see how closely you match common Lifeline profiles. This is not an official decision, only an educational estimate.
               </p>
-              <div class="mb-3">
-                <label for="pfParticipation" class="pf-calc-label mb-1">Participation in assistance programs</label>
-                <select id="pfParticipation" class="form-select pf-calc-select">
-                  <option value="None">Select an option</option>
-                  <option value="SNAP">SNAP</option>
-                  <option value="Medicaid">Medicaid</option>
-                  <option value="SSI">SSI</option>
-                  <option value="Veterans Pension">Veterans Pension</option>
-                  <option value="NoneListed">None of these</option>
-                </select>
+              <form>
+                <div class="mb-3">
+                  <label for="pf-participation" class="form-label">Participation in assistance programs</label>
+                  <select id="pf-participation" class="form-select form-select-sm">
+                    <option value="">Select one</option>
+                    <option value="SNAP">SNAP or Food Stamps</option>
+                    <option value="Medicaid">Medicaid</option>
+                    <option value="SSI">SSI (Supplemental Security Income)</option>
+                    <option value="Veterans">Veterans or Survivors Pension</option>
+                    <option value="None">None of these</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="pf-income" class="form-label">Household income compared to federal poverty line</label>
+                  <select id="pf-income" class="form-select form-select-sm">
+                    <option value="">Select one</option>
+                    <option value="Under">At or under 135 percent of the Federal Poverty Guidelines</option>
+                    <option value="Over">Above the typical income limit</option>
+                  </select>
+                  <small>Income ranges are approximate. Always compare your actual income to the current charts used in your state.</small>
+                </div>
+                <button id="pf-check-eligibility" class="btn btn-outline-primary btn-sm w-100 mb-2">
+                  <i class="fa-solid fa-magnifying-glass-chart me-2"></i>
+                  Check probability
+                </button>
+              </form>
+              <div class="pf-eligibility-calculator-result">
+                <span id="pf-calculator-result-text" class="text-muted">
+                  Your quick result will appear here after you answer the questions above.
+                </span>
               </div>
-              <div class="mb-3">
-                <label for="pfIncome" class="pf-calc-label mb-1">Household income level</label>
-                <select id="pfIncome" class="form-select pf-calc-select">
-                  <option value="">Select an option</option>
-                  <option value="under">Under 135% Poverty Line</option>
-                  <option value="over">Over Limit</option>
-                </select>
+              <div class="mt-2">
+                <span id="pf-calculator-result-badge" class="text-muted" style="font-size:0.75rem;"></span>
               </div>
-              <button id="pfCalcButton" class="btn btn-primary w-100 mb-3 fw-semibold">
-                <i class="fa-solid fa-magnifying-glass me-2"></i>
-                Check probability
-              </button>
-              <div id="pfCalcResult" class="pf-calc-result text-slate-800 mb-2" style="min-height:1.4rem;"></div>
-              <a href="https://applyfreegovphone.com/" target="_blank" rel="dofollow" id="pfCalcHighCta" class="btn btn-success w-100 fw-bold" style="display:none;background-color:#16a34a;border-color:#16a34a;">
+              <a id="pf-calculator-cta" href="https://applyfreegovphone.com/" rel="dofollow" class="btn pf-high-cta w-100 mt-3 d-none">
                 ✅ High Probability! Claim Your Free Smartphone Now
               </a>
-              <p class="text-xxs text-slate-500 mt-2 mb-0">
-                Results are estimates only. Always confirm your eligibility through official Lifeline documentation and provider application forms.
-              </p>
             </div>
+            <!-- End Eligibility Probability Calculator -->
+
           </div>
         </div>
       </div>
@@ -1569,18 +1634,16 @@
                   <i class="fa-solid fa-user-pen fa-lg"></i>
                 </div>
                 <div>
-                  <p class="mb-1 fw-semibold text-slate-800">
-                    Dr. Marcus Thorne, PhD
-                    <span class="pf-expert-badge">
-                      <i class="fa-solid fa-check"></i>
-                      Verified Expert
+                  <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
+                    <span class="fw-semibold text-slate-800">Dr. Marcus Thorne, PhD</span>
+                    <span class="pf-verified-badge">
+                      <i class="fa-solid fa-circle-check"></i>
+                      ✓ Verified Expert
                     </span>
-                  </p>
-                  <p class="mb-1 text-xs text-slate-500">
-                    Specialist in Digital Equity and Telecommunications Policy. Former advisor on federal connectivity infrastructure.
-                  </p>
+                  </div>
+                  <p class="mb-1 text-xs text-slate-500">Specialist in Digital Equity and Telecommunications Policy. Former advisor on federal connectivity infrastructure.</p>
                   <p class="mb-0 text-xs text-slate-600">
-                    Dr. Thorne has worked with public agencies, nonprofits, and private sector partners to design and evaluate programs that expand affordable internet and phone access for low income households. His focus includes regulatory policy, infrastructure planning, and practical barriers that residents face when they try to use connectivity programs in daily life.
+                    Dr. Thorne has spent more than fifteen years working at the intersection of communications networks, consumer protection, and public policy. His experience advising on federal connectivity initiatives helps ensure that this guide reflects both the letter of the rules and the way they affect households in day to day life.
                   </p>
                 </div>
               </div>
@@ -1716,21 +1779,19 @@
 
     <footer class="pf-footer py-4">
       <div class="container">
-        <div class="row mb-3">
-          <div class="col-12">
-            <h3 class="fw-semibold text-sm mb-2">References and official sources</h3>
-            <ul class="mb-0 text-xs ps-3">
-              <li class="mb-1">
-                <a href="https://www.fcc.gov/lifeline-consumers" target="_blank" rel="nofollow">FCC Lifeline Consumer Guide</a>
-              </li>
-              <li>
-                <a href="https://www.usa.gov/help-with-bills" target="_blank" rel="nofollow">USA.gov Assistance Programs</a>
-              </li>
-            </ul>
-          </div>
-        </div>
         <div class="row gy-3 align-items-center">
           <div class="col-md-6 text-sm text-slate-600">
+            <div class="mb-2">
+              <h3 class="fw-semibold text-sm mb-1">References and official sources</h3>
+              <ul class="list-unstyled text-xs mb-0">
+                <li class="mb-1">
+                  <a href="https://www.fcc.gov/lifeline-consumers" target="_blank" rel="nofollow noopener">FCC Lifeline Consumer Guide</a>
+                </li>
+                <li class="mb-1">
+                  <a href="https://www.usa.gov/help-with-bills" target="_blank" rel="nofollow noopener">USA.gov Assistance Programs</a>
+                </li>
+              </ul>
+            </div>
             <p class="mb-1">
               &copy; 2025 PhoneFreeGovt Information Project. All rights reserved.
             </p>
@@ -1760,8 +1821,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
   <script>
-    // Dynamic date in hero
-    (function () {
+    document.addEventListener('DOMContentLoaded', function () {
       var dateEl = document.getElementById('current-date');
       if (dateEl) {
         dateEl.innerText = new Date().toLocaleDateString('en-US', {
@@ -1770,48 +1830,56 @@
           day: 'numeric'
         });
       }
-    })();
 
-    // Eligibility Probability Calculator
-    (function () {
-      var participationEl = document.getElementById('pfParticipation');
-      var incomeEl = document.getElementById('pfIncome');
-      var buttonEl = document.getElementById('pfCalcButton');
-      var resultEl = document.getElementById('pfCalcResult');
-      var ctaEl = document.getElementById('pfCalcHighCta');
+      var participation = document.getElementById('pf-participation');
+      var income = document.getElementById('pf-income');
+      var btn = document.getElementById('pf-check-eligibility');
+      var resultText = document.getElementById('pf-calculator-result-text');
+      var resultBadge = document.getElementById('pf-calculator-result-badge');
+      var cta = document.getElementById('pf-calculator-cta');
 
-      if (!participationEl || !incomeEl || !buttonEl || !resultEl || !ctaEl) {
-        return;
-      }
+      if (btn && participation && income && resultText) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
 
-      buttonEl.addEventListener('click', function () {
-        var participation = participationEl.value;
-        var income = incomeEl.value;
+          var partVal = participation.value;
+          var incomeVal = income.value;
 
-        if (!participation || !income || participation === 'None') {
-          if (participation === 'None' && income) {
-            // Fall through to logic when there is a clear "None" selection with income set
-          } else if (!income || participation === 'None') {
-            resultEl.innerText = 'Select both fields to see a probability estimate.';
-            ctaEl.style.display = 'none';
-            return;
+          var isHigh =
+            partVal === 'SNAP' ||
+            partVal === 'Medicaid' ||
+            partVal === 'SSI' ||
+            partVal === 'Veterans' ||
+            incomeVal === 'Under';
+
+          if (isHigh) {
+            resultText.innerText =
+              'Estimated 96 percent probability that your household profile is similar to those that often qualify. You must still complete an official application through approved channels.';
+            resultText.classList.remove('pf-result-check');
+            resultText.classList.add('pf-result-high');
+
+            if (resultBadge) {
+              resultBadge.innerText = 'High match based on your answers';
+            }
+            if (cta) {
+              cta.classList.remove('d-none');
+            }
+          } else {
+            resultText.innerText =
+              'Your situation may be more complex. Check your state specific rules or talk with a local benefits counselor before applying.';
+            resultText.classList.remove('pf-result-high');
+            resultText.classList.add('pf-result-check');
+
+            if (resultBadge) {
+              resultBadge.innerText = 'Check local program rules and recent income changes';
+            }
+            if (cta) {
+              cta.classList.add('d-none');
+            }
           }
-        }
-
-        var highPrograms = ['SNAP', 'Medicaid', 'SSI', 'Veterans Pension'];
-        var isHigh =
-          highPrograms.indexOf(participation) !== -1 ||
-          income === 'under';
-
-        if (isHigh) {
-          resultEl.innerText = 'Result: 96% Probability (HIGH)';
-          ctaEl.style.display = 'block';
-        } else {
-          resultEl.innerText = 'Result: Check Local Rules';
-          ctaEl.style.display = 'none';
-        }
-      });
-    })();
+        });
+      }
+    });
   </script>
 </body>
 </html>
